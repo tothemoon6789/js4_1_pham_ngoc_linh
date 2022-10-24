@@ -2,6 +2,7 @@
 
 const demo = document.getElementById("demo");
 document.getElementById("li_bai1").onclick = () => {
+    // INPUT
 
     demo.innerHTML = "";
     const inputBai11 = createElement("input");
@@ -10,6 +11,9 @@ document.getElementById("li_bai1").onclick = () => {
     const buttonBai11 = createElement("button");
     // const tieudeBai11 = createElement("");
     const heading = document.createElement("h4");
+    // END INPUT
+    // HANDLE
+
     heading.innerHTML = "BÀI 1: Cho người dùng nhập vào 3 số nguyên. Viết chương trình xuất 3 số theo thứ tự tăng dần."
     demo.appendChild(heading);
     setAttributeForElement(inputBai11);
@@ -23,10 +27,15 @@ document.getElementById("li_bai1").onclick = () => {
     demo.appendChild(buttonBai11);
 
     buttonBai11.onclick = () => {
+        // INPUT
+
         var text = "Chuỗi giá trị tăng dần: ";
         const v1 = inputBai11.value * 1;
         const v2 = inputBai12.value * 1;
         const v3 = inputBai13.value * 1;
+        // END INPUT
+        // HANDEL
+
         if (v1 < v2 && v1 < v3) {
             text += v1 + " ,";
             if (v2 < v3) {
@@ -53,7 +62,10 @@ document.getElementById("li_bai1").onclick = () => {
 
             }
         }
+        // END HANDEL
+        // OUTPUT
         buttonBai11.innerHTML = text;
+        // END OUTPUT
     }
 
 
@@ -64,10 +76,11 @@ document.getElementById("li_bai1").onclick = () => {
         })
         demo.appendChild(element);
     }
-
+    // END HANDLE
 }
 // BÀI 2
 document.getElementById("li_bai2").onclick = () => {
+    // INPUT
     demo.innerHTML = "";
 
 
@@ -81,8 +94,9 @@ document.getElementById("li_bai2").onclick = () => {
     const b2_answer = createElement("p");
     const b2_btn = createElement("button");
     const heading = document.createElement("h4");
+    // END INPUT
+    // HANDLE
     heading.innerHTML = "BÀI 2: Viết chương trình Chào hỏi các thành viên trong gia đình với các đặc điểm. Đầu tiên máy sẽ hỏi ai sử dụng máy. Sau đó dựa vào câu trả lời và đưa ra lời chào phù hợp. Giả sử trong gia đình có 4 thành viên: Bố (B), Mẹ (M), anh Trai (A) và Em gái (E)."
-
     demo.appendChild(heading);
     setOption(b2_option1, "Bố")
     setOption(b2_option2, "Mẹ")
@@ -99,11 +113,15 @@ document.getElementById("li_bai2").onclick = () => {
     demo.appendChild(b2_answer);
     demo.appendChild(b2_btn);
     b2_btn.onclick = () => {
+        // OUTPUT
         b2_answer.innerHTML = "Xin chào " + b2_select.value;
+        // END OUTPUT
     }
-
+    // END HANDLE
 }
 document.getElementById("li_bai3").onclick = () => {
+    // INPUT
+
     demo.innerHTML = "";
     const inputBai31 = createElement("input");
     const inputBai32 = createElement("input");
@@ -111,6 +129,8 @@ document.getElementById("li_bai3").onclick = () => {
     const buttonBai31 = createElement("button");
 
     const heading = document.createElement("h4");
+    // END INPUT
+    // HANDLE
     heading.innerHTML = "BÀI 3: Cho 3 số nguyên. Viết chương trình xuất ra có bao nhiêu số lẻ và bao nhiêu số chẵn."
     demo.appendChild(heading);
     setAttributeForElement(inputBai31);
@@ -142,8 +162,10 @@ document.getElementById("li_bai3").onclick = () => {
 
 
 
+        // OUTPUT
 
         buttonBai31.innerHTML = "Có: " + soChan + " số chẵn " + " và " + soLe + " số lẻ";
+        // END OUTPUT
     }
 
 
@@ -154,10 +176,12 @@ document.getElementById("li_bai3").onclick = () => {
         })
         demo.appendChild(element);
     }
-
+    // END HANDLE
 
 }
 document.getElementById("li_bai4").onclick = () => {
+    // INPUT
+
     demo.innerHTML = "";
     const inputBai11 = createElement("input");
     const inputBai12 = createElement("input");
@@ -165,6 +189,8 @@ document.getElementById("li_bai4").onclick = () => {
     const buttonBai11 = createElement("button");
 
     const heading = document.createElement("h4");
+    // END INPUT
+    // HANDLE
     heading.innerHTML = "BÀI 4: Viết chương trình cho nhập 3 cạnh của tam giác. Hãy cho biết đó là tam giác gì?"
     demo.appendChild(heading);
     setAttributeForElement(inputBai11);
@@ -240,19 +266,25 @@ document.getElementById("li_bai4").onclick = () => {
                     b = v1;
                     c = v2;
                     if (c * c == (a * a + b * b)) {
+                        // OUTPUT
                         buttonBai11.innerHTML = "Tam giác vuông";
+                        // END OUTPUT
                     } else {
-
+                        // OUTPUT
                         buttonBai11.innerHTML = "Tam giác bình thường";
+                        // END OUTPUT
                     }
                 } else {
                     b = v2;
                     c = v1;
                     if (c * c == (a * a + b * b)) {
+                        // OUTPUT
                         buttonBai11.innerHTML = "Tam giác vuông";
+                        // END OUTPUT
                     } else {
-
+                        // OUTPUT
                         buttonBai11.innerHTML = "Tam giác bình thường";
+                        // END OUTPUT
                     }
 
                 }
@@ -268,8 +300,9 @@ document.getElementById("li_bai4").onclick = () => {
         })
         demo.appendChild(element);
     }
-
+    // END HANDLE
 }
+// HANDLE
 // set option 
 function setOption(element, value, content) {
     element.setAttribute("value", value);
@@ -279,3 +312,4 @@ function setOption(element, value, content) {
 function createElement(element) {
     return document.createElement(element);
 }
+// END HANDLE
